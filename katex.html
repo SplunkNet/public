@@ -14,21 +14,31 @@
 
 <script>
 
-var formulas = [
+var formulas = [];
+  
+formulas[0] = [
   '0 = \\pm\\sqrt{a^2 + b^2}',
   '1 = \\pm\\sqrt{a^2 + b^2}',
   '2 = \\pm\\sqrt{a^2 + b^2}'
 ];
 
+formulas[1] = [
+  'x = \\pm\\sqrt{a^2 + b^2}',
+  'y = \\pm\\sqrt{a^2 + b^2}',
+  'z = \\pm\\sqrt{a^2 + b^2}'
+];  
+
+
+  
 var i;
-for (i = 0; i < formulas.length; i++) { 
+for (i = 0; i < formulas[1].length; i++) { 
 
   var myNode = '';
   myNode = document.createElement('p');
   myNode.setAttribute('id','id' + i);
   document.getElementById('myDiv').appendChild(myNode);
 
-  katex.render(formulas[i], myNode, {
+  katex.render(formulas[1], myNode, {
     throwOnError: false
   });
 

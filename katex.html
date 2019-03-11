@@ -10,9 +10,8 @@
   </head>
   <body>
 
-<h1>Just a heading</h1>
-
-<div id="myDiv"><p id="first">Inside the div.</p></div>
+    <h1 id="myCategory"></h1>
+    <div id="myDiv"></div>
 
 <script>
 
@@ -76,6 +75,7 @@ var data = {
 };
 
 // Parse data
+document.getElementById("myCategory").innerHTML = data[category].cim;
 var i;
 for (i = 0; i < data[category].rendezes[calculate].length; i++) { 
 	

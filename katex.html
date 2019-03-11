@@ -29,7 +29,8 @@ var urlParams;
 })();
 
 console.log(urlParams);
-  
+var gotParam = parseInt(urlParams.enc, 10);
+console.log(gotParam);
   
   
   
@@ -48,8 +49,6 @@ formulas[1] = [
   'z = \\pm\\sqrt{a^2 + b^2}'
 ];  
 
-var gotParam = parseInt(urlParams.enc, 10);
-console.log(gotParam);
 
   
 var i;

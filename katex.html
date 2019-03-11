@@ -59,6 +59,7 @@ for (i = 0; i < formulas[gotParam].length; i++) {
   var myNode = '';
   myNode = document.createElement('p');
   myNode.setAttribute('id','id' + i);
+  myNode.setAttribute('align', 'center');
   document.getElementById('myDiv').appendChild(myNode);
 
   katex.render(formulas[gotParam][i], myNode, {

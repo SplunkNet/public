@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>Page Title</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+<h1>Just a heading</h1>
+
+<div id="myDiv"><p id="first">Inside the div.</p></div>
+
+<script>
+
+var formulas = [
+  '0 = \\pm\\sqrt{a^2 + b^2}',
+  '1 = \\pm\\sqrt{a^2 + b^2}',
+  '2 = \\pm\\sqrt{a^2 + b^2}'
+];
+
+var i;
+for (i = 0; i < formulas.length; i++) { 
+
+  var myNode = '';
+  myNode = document.createElement('p');
+  myNode.setAttribute('id','id' + i);
+  document.getElementById('myDiv').appendChild(myNode);
+
+  katex.render(formulas[i], myNode, {
+    throwOnError: false
+  });
+
+}
+
+
+var urlParams;
+(window.onpopstate = function () {
+    var match,
+        pl     = /\+/g,  // Regex for replacing addition symbol with a space
+        search = /([^&=]+)=?([^&]*)/g,
+        decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+        query  = window.location.search.substring(1);
+
+    urlParams = {};
+    while (match = search.exec(query))
+       urlParams[decode(match[1])] = decode(match[2]);
+})();
+
+
+alert(urlParams["mode"]);
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

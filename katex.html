@@ -31,12 +31,13 @@ var urlParams;
 })();
 
 console.log(urlParams);
-var gotParam = parseInt(urlParams.enc, 10);
+var gotParam = urlParams.cat;
 console.log(gotParam);
   
   
+
   
-  
+/*  
 var formulas = [];
   
 formulas[0] = [
@@ -52,8 +53,50 @@ formulas[1] = [
   '\\underline{\\underline{p_1 = \\pu{123 m//s^2}}}'
 ];  
 
+*/
 
-  
+var data = {
+  gaztorveny: {
+    cim: "Egyetemes gáztörvény",
+	kepletek: [
+	  '\\cfrac{p_1 \\cdot V_1}{T_1} = \\cfrac{p_2 \\cdot V_2}{T_2}',
+	  'p_1 \\cdot V_1 = \\cfrac{p_2 \\cdot V_2 \\cdot T_1}{T_2}',
+	  'p_1 = \\cfrac{p_2 \\cdot V_2 \\cdot T_1}{T_2 \\cdot V_1}',
+	  '\\underline{\\underline{p_1 = \\pu{123 m//s^2}}}',
+	  'V_1 = \\cfrac{p_2 \\cdot V_2 \\cdot T_1}{T_2 \\cdot p_1}',
+	  '\\underline{\\underline{V_1 = \\pu{123 m//s^2}}}'
+	],
+	rendezes : {
+	  v1: [0, 1, 2, 3],
+	  v2: [0, 1, 4, 5],
+	  v3: [0, 1, 4],
+	  v4: [0, 1, 4],
+	  v5: [0, 1, 4],
+	  v6: [0, 1, 4]
+	}
+  },
+  valamimas: {
+    cim: "Egyetemes gáztörvény",
+	kepletek: [
+	  '\\cfrac{p_1 \\cdot V_1}{T_1} = \\cfrac{p_2 \\cdot V_2}{T_2}',
+	  'p_1 \\cdot V_1 = \\cfrac{p_2 \\cdot V_2 \\cdot T_1}{T_2}',
+	  'p_1 = \\cfrac{p_2 \\cdot V_2 \\cdot T_1}{T_2 \\cdot V_1}',
+	  '\\underline{\\underline{p_1 = \\pu{123 m//s^2}}}',
+	  'V_1 = \\cfrac{p_2 \\cdot V_2 \\cdot T_1}{T_2 \\cdot p_1}',
+	  '\\underline{\\underline{V_1 = \\pu{123 m//s^2}}}'
+	],
+	rendezes : {
+	  v1: [0, 1, 2, 3],
+	  v2: [0, 1, 4, 5],
+	  v3: [0, 1, 4],
+	  v4: [0, 1, 4],
+	  v5: [0, 1, 4],
+	  v6: [0, 1, 4]
+	}
+  }
+};
+
+
 var i;
 for (i = 0; i < formulas[gotParam].length; i++) { 
 

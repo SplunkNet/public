@@ -87,7 +87,7 @@ for (i = 0; i < data[category].rendezes[calculate].length; i++) {
   myNode.style.marginBottom = "30px";
   document.getElementById('myDiv').appendChild(myNode);
 
-  katex.render(data[category].kepletek[data[category].rendezes.[calculate][i]], myNode, {
+  katex.render(data[category].kepletek[data[category].rendezes[calculate][i]], myNode, {
     throwOnError: false
   });
 }

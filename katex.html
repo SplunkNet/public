@@ -30,7 +30,6 @@ var urlParams;
        urlParams[decode(match[1])] = decode(match[2]);
 })();
 
-console.log(urlParams);
 var category = urlParams.category;
 var calculate = urlParams.calculate;
   
@@ -38,41 +37,41 @@ var calculate = urlParams.calculate;
 var data = {
   gaztorveny: {
     cim: "Egyetemes gáztörvény",
-	kepletek: [
-	  '\\cfrac{p_1 \\cdot V_1}{T_1} = \\cfrac{p_2 \\cdot V_2}{T_2}',
-	  'p_1 \\cdot V_1 = \\cfrac{p_2 \\cdot V_2 \\cdot T_1}{T_2}',
-	  'p_1 = \\cfrac{p_2 \\cdot V_2 \\cdot T_1}{T_2 \\cdot V_1}',
-	  '\\underline{\\underline{p_1 = \\pu{123 m//s^2}}}',
-	  'V_1 = \\cfrac{p_2 \\cdot V_2 \\cdot T_1}{T_2 \\cdot p_1}',
-	  '\\underline{\\underline{V_1 = \\pu{123 m//s^2}}}'
-	],
-	rendezes : {
-	  v1: [0, 1, 2, 3],
-	  v2: [0, 1, 4, 5],
-	  v3: [0, 1, 4],
-	  v4: [0, 1, 4],
-	  v5: [0, 1, 4],
-	  v6: [0, 1, 4]
-	}
+    kepletek: [
+      '\\cfrac{p_1 \\cdot V_1}{T_1} = \\cfrac{p_2 \\cdot V_2}{T_2}',
+      'p_1 \\cdot V_1 = \\cfrac{p_2 \\cdot V_2 \\cdot T_1}{T_2}',
+      'p_1 = \\cfrac{p_2 \\cdot V_2 \\cdot T_1}{T_2 \\cdot V_1}',
+      '\\underline{\\underline{p_1 = \\pu{123 m//s^2}}}',
+      'V_1 = \\cfrac{p_2 \\cdot V_2 \\cdot T_1}{T_2 \\cdot p_1}',
+      '\\underline{\\underline{V_1 = \\pu{123 m//s^2}}}'
+    ],
+    rendezes : {
+      v1: [0, 1, 2, 3],
+      v2: [0, 1, 4, 5],
+      v3: [0, 1, 4],
+      v4: [0, 1, 4],
+      v5: [0, 1, 4],
+      v6: [0, 1, 4]
+    }
   },
   valamimas: {
-    cim: "Egyetemes gáztörvény",
-	kepletek: [
-	  '\\cfrac{p_1 \\cdot V_1}{T_1} = \\cfrac{p_2 \\cdot V_2}{T_2}',
-	  'p_1 \\cdot V_1 = \\cfrac{p_2 \\cdot V_2 \\cdot T_1}{T_2}',
-	  'p_1 = \\cfrac{p_2 \\cdot V_2 \\cdot T_1}{T_2 \\cdot V_1}',
-	  '\\underline{\\underline{p_1 = \\pu{123 m//s^2}}}',
-	  'V_1 = \\cfrac{p_2 \\cdot V_2 \\cdot T_1}{T_2 \\cdot p_1}',
-	  '\\underline{\\underline{V_1 = \\pu{123 m//s^2}}}'
-	],
-	rendezes : {
-	  v1: [0, 1, 2, 3],
-	  v2: [0, 1, 4, 5],
-	  v3: [0, 1, 4],
-	  v4: [0, 1, 4],
-	  v5: [0, 1, 4],
-	  v6: [0, 1, 4]
-	}
+    cim: "Ferde hajítás",
+    kepletek: [
+      '\\cfrac{p_1 \\cdot V_1}{T_1} = \\cfrac{p_2 \\cdot V_2}{T_2}',
+      'p_1 \\cdot V_1 = \\cfrac{p_2 \\cdot V_2 \\cdot T_1}{T_2}',
+      'p_1 = \\cfrac{p_2 \\cdot V_2 \\cdot T_1}{T_2 \\cdot V_1}',
+      '\\underline{\\underline{p_1 = \\pu{123 m//s^2}}}',
+      'V_1 = \\cfrac{p_2 \\cdot V_2 \\cdot T_1}{T_2 \\cdot p_1}',
+      '\\underline{\\underline{V_1 = \\pu{123 m//s^2}}}'
+    ],
+    rendezes : {
+      v1: [0, 1, 2, 3],
+      v2: [0, 1, 4, 5],
+      v3: [0, 1, 4],
+      v4: [0, 1, 4],
+      v5: [0, 1, 4],
+      v6: [0, 1, 4]
+    }
   }
 };
 

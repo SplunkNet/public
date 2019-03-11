@@ -31,29 +31,9 @@ var urlParams;
 })();
 
 console.log(urlParams);
-var gotParam = urlParams.cat;
-console.log(gotParam);
+var category = urlParams.category;
+var calculate = urlParams.calculate;
   
-  
-
-  
-/*  
-var formulas = [];
-  
-formulas[0] = [
-  '0 = \\pm\\sqrt{a^2 + b^2}',
-  '1 = \\pm\\sqrt{a^2 + b^2}',
-  '2 = \\pm\\sqrt{a^2 + b^2}'
-];
-
-formulas[1] = [
-  '\\cfrac{p_1 \\cdot V_1}{T_1} = \\cfrac{p_2 \\cdot V_2}{T_2}',
-  'p_1 \\cdot V_1 = \\cfrac{p_2 \\cdot V_2 \\cdot T_1}{T_2}',
-  'p_1 = \\cfrac{p_2 \\cdot V_2 \\cdot T_1}{T_2 \\cdot V_1}',
-  '\\underline{\\underline{p_1 = \\pu{123 m//s^2}}}'
-];  
-
-*/
 
 var data = {
   gaztorveny: {
@@ -98,7 +78,7 @@ var data = {
 
 
 var i;
-for (i = 0; i < data[gotParam].rendezes.v1.length; i++) { 
+for (i = 0; i < data[category].rendezes.[calculate].length; i++) { 
 	
   var myNode = '';
   myNode = document.createElement('p');
@@ -107,13 +87,10 @@ for (i = 0; i < data[gotParam].rendezes.v1.length; i++) {
   myNode.style.marginBottom = "30px";
   document.getElementById('myDiv').appendChild(myNode);
 
-  katex.render(data[gotParam].kepletek[data[gotParam].rendezes.v1[i]], myNode, {
+  katex.render(data[category].kepletek[data[category].rendezes.[calculate][i]], myNode, {
     throwOnError: false
   });
-
 }
-
-
 
 
 </script>

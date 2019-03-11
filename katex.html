@@ -98,8 +98,8 @@ var data = {
 
 
 var i;
-for (i = 0; i < formulas[gotParam].length; i++) { 
-
+for (i = 0; i < data[gotParam].rendezes.v1.length; i++) { 
+	
   var myNode = '';
   myNode = document.createElement('p');
   myNode.setAttribute('id','id' + i);
@@ -107,7 +107,7 @@ for (i = 0; i < formulas[gotParam].length; i++) {
   myNode.style.marginBottom = "30px";
   document.getElementById('myDiv').appendChild(myNode);
 
-  katex.render(formulas[gotParam][i], myNode, {
+  katex.render(data[gotParam].kepletek[data[gotParam].rendezes.v1[i]], myNode, {
     throwOnError: false
   });
 

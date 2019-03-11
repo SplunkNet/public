@@ -38,7 +38,7 @@ for (i = 0; i < formulas[1].length; i++) {
   myNode.setAttribute('id','id' + i);
   document.getElementById('myDiv').appendChild(myNode);
 
-  katex.render(formulas[1], myNode, {
+  katex.render(formulas[1][i], myNode, {
     throwOnError: false
   });
 

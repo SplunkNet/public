@@ -48,10 +48,12 @@ formulas[1] = [
   'z = \\pm\\sqrt{a^2 + b^2}'
 ];  
 
+var gotParam = gotparseInt(urlParams.enc, 10);
+console.log(gotParam);
 
   
 var i;
-for (i = 0; i < formulas[parseInt(urlParams.enc, 10)].length; i++) { 
+for (i = 0; i < formulas[gotParam].length; i++) { 
 
   var myNode = '';
   myNode = document.createElement('p');

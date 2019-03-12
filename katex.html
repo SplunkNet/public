@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page Title</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/mhchem.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>katex</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/mhchem.min.js"></script>
   </head>
   <body>
-
     <h2 id="myCategory" style="text-align:center;"></h1><br/>
     <div id="myDiv"></div>
 
@@ -45,12 +44,12 @@ var data = {
       '\\underline{\\underline{V_1 = \\pu{123 m//s^2}}}'
     ],
     rendezes : {
-      v1: [0, 1, 2, 3],
-      v2: [0, 1, 4, 5],
-      v3: [0, 1, 4],
-      v4: [0, 1, 4],
-      v5: [0, 1, 4],
-      v6: [0, 1, 4]
+      x1: [0, 1, 2, 3],
+      x2: [0, 1, 4, 5],
+      x3: [0, 1, 4],
+      x4: [0, 1, 4],
+      x5: [0, 1, 4],
+      x6: [0, 1, 4]
     }
   },
   valamimas: {
@@ -64,12 +63,12 @@ var data = {
       '\\underline{\\underline{V_1 = \\pu{123 m//s^2}}}'
     ],
     rendezes : {
-      v1: [0, 1, 2, 3],
-      v2: [0, 1, 4, 5],
-      v3: [0, 1, 4],
-      v4: [0, 1, 4],
-      v5: [0, 1, 4],
-      v6: [0, 1, 4]
+      x1: [0, 1, 2, 3],
+      x2: [0, 1, 4, 5],
+      x3: [0, 1, 4],
+      x4: [0, 1, 4],
+      x5: [0, 1, 4],
+      x6: [0, 1, 4]
     }
   }
 };
@@ -93,5 +92,5 @@ for (i = 0; i < data[category].rendezes[calculate].length; i++) {
 
 </script>
 
-</body>
+  </body>
 </html>

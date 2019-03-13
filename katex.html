@@ -97,7 +97,7 @@ var variables = [...Object.keys(data[category].rendezes)]
 var values = [];
 var j;
 for (j = 0; j < variables.length; j++) {
-  values[j] = urlParams[variables[j]];
+  values[j] = parseInt(urlParams[variables[j]], 10);
 }
 
 console.log(variables);

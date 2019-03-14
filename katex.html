@@ -106,7 +106,7 @@ data.egyenvalt.kepletek = [
   '\\sqrt{\\cfrac {2 \\cdot {\\pu{' + values[0] + ' m}}} {\\pu{' + values[1] + ' m//{s^2}}}} = {t}',
   '\\underline{\\underline{s = \\pu{' + ((values[1] * (Math.pow(values[2],2))) / 2).toFixed(2).toString() + ' m}}}',
   '\\underline{\\underline{a = \\pu{' + ((2 * values[0]) / (Math.pow(values[2],2))).toFixed(2).toString() + ' m//s^2}}}',
-  '\\underline{\\underline{t = \\pu{' + (Math.sqrt(((2 * values[0]) / values[0]))).toFixed(2).toString() + ' s}}}'
+  '\\underline{\\underline{t = \\pu{' + (Math.sqrt(((2 * values[0]) / values[1]))).toFixed(2).toString() + ' s}}}'
 ];
 	
 // Parse data

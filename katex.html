@@ -104,7 +104,7 @@ data.gaztorveny.kepletek = [
   '\\underline{\\underline{p_2 = {\\pu{' + ((values[0] * values[1] * values[5]) / (values[4] * values[3])).toFixed(2).toString() + ' Pa}}}}',
   '\\underline{\\underline{V_2 = {\\pu{' + ((values[0] * values[1] * values[5]) / (values[4] * values[2])).toFixed(2).toString() + ' m^3}}}}',
   '\\underline{\\underline{T_1 = {\\pu{' + ((values[5] * values[1] * values[0]) / (values[2] * values[3])).toFixed(2).toString() + ' \\degree K}}}}',
-  '\\underline{\\underline{T_2 = {\\pu{1 \\degree K}}}}'
+  '\\underline{\\underline{T_2 = {\\pu{' + ((values[4] * values[3] * values[2]) / (values[0] * values[1])).toFixed(2).toString() + ' \\degree K}}}}'
 ];
 		
 // Parse data

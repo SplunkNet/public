@@ -27,8 +27,6 @@ var urlParams;
   while (match = search.exec(query))
   urlParams[decode(match[1])] = decode(match[2]);
 })();
-
-console.log(urlParams);
 var category = urlParams.category;
 	  
 // Only data here
@@ -65,7 +63,7 @@ var data = {
   }
 };
 	
-// Misc
+// Kalkuláció
 var calculate = '';
 var variables = [...Object.keys(data[category].rendezes)]
 var values = [];
@@ -76,40 +74,38 @@ for (j = 0; j < variables.length; j++) {
     calculate = variables[j];
   }
   else { 
-    values[j] = parseInt(urlParams[variables[j]], 10);
+    values[j] = Number(urlParams[variables[j]]);
+    // values[j] = parseInt(urlParams[variables[j]], 10);
   }
 }
 
-console.log(variables);
-console.log(values);
-
-// Kepletek
+// *** Kepletek ***
 data.gaztorveny.kepletek = [
-      '\\cfrac {p_1 \\cdot V_1} {T_1} = \\cfrac {p_2 \\cdot V_2} {T_2}',
-      'p_1 \\cdot V_1 = \\cfrac {p_2 \\cdot V_2 \\cdot T_1} {T_2}',
-      'p_1 = \\cfrac {p_2 \\cdot V_2 \\cdot T_1} {T_2 \\cdot V_1}',
-      'V_1 = \\cfrac {p_2 \\cdot V_2 \\cdot T_1} {T_2 \\cdot p_1}',
-      '\\cfrac {p_1 \\cdot V_1 \\cdot T_2} {T_1} = p_2 \\cdot V_2',
-      '\\cfrac {p_1 \\cdot V_1 \\cdot T_2} {T_1 \\cdot V_2} = p_2',
-      '\\cfrac {p_1 \\cdot V_1 \\cdot T_2} {T_1 \\cdot p_2} = V_2',
-      '\\cfrac {T_1} {p_1 \\cdot V_1} = \\cfrac {T_2} {p_2 \\cdot V_2}',
-      '\\cfrac {T_1} {p_1} = \\cfrac {T_2 \\cdot V_1} {p_2 \\cdot V_2}',
-      '\\cfrac {T_1 \\cdot V_2} {p_1 \\cdot V_1} = \\cfrac {T_2} {p_2}',
-      'T_1 = \\cfrac {T_2 \\cdot V_1 \\cdot p_1} {p_2 \\cdot V_2}',
-      '\\cfrac {T_1 \\cdot V_2 \\cdot p_2} {p_1 \\cdot V_1} = T_2',
-      'p_1 = \\cfrac {{\\pu{' + values[2] + ' Pa}} \\cdot {\\pu{' + values[3] + ' m^3}} \\cdot {\\pu{' + values[4] + ' \\degree K}}} {{\\pu{' + values[5] + ' \\degree K}} \\cdot {\\pu{' + values[1] + ' m^3}}}',
-      'V_1 = \\cfrac {{\\pu{' + values[2] + ' Pa}} \\cdot {\\pu{' + values[3] + ' m^3}} \\cdot {\\pu{' + values[4] + ' \\degree K}}} {{\\pu{' + values[5] + ' \\degree K}} \\cdot {\\pu{' + values[0] + ' Pa}}}',
-      '\\cfrac {{\\pu{' + values[0] + ' Pa}} \\cdot {\\pu{' + values[1] + ' m^3}} \\cdot {\\pu{' + values[5] + ' \\degree K}}} {{\\pu{' + values[4] + ' \\degree K}} \\cdot {\\pu{' + values[3] + ' m^3}}} = p_2',
-      '\\cfrac {{\\pu{' + values[0] + ' Pa}} \\cdot {\\pu{' + values[1] + ' m^3}} \\cdot {\\pu{' + values[5] + ' \\degree K}}} {{\\pu{' + values[4] + ' \\degree K}} \\cdot {\\pu{' + values[2] + ' Pa}}} = V_2',
-      'T_1 = \\cfrac {{\\pu{' + values[5] + ' \\degree K}} \\cdot {\\pu{' + values[1] + ' m^3}} \\cdot {\\pu{' + values[0] + ' Pa}}} {{\\pu{' + values[2] + ' Pa}} \\cdot {\\pu{' + values[3] + ' m^3}}}',
-      '\\cfrac {{\\pu{' + values[4] + ' \\degree K}} \\cdot {\\pu{' + values[3] + ' m^3}} \\cdot {\\pu{' + values[2] + ' Pa}}} {{\\pu{' + values[0] + ' Pa}} \\cdot {\\pu{' + values[1] + ' m^3}}} = T_2',
-      '\\underline{\\underline{p_1 = {\\pu{' + ((values[2] * values[3] * values[4])/(values[5] * values[1])).toFixed(2).toString() + ' Pa}}}}',
-      '\\underline{\\underline{V_1 = {\\pu{1 m^3}}}}',
-      '\\underline{\\underline{p_2 = {\\pu{1 Pa}}}}',
-      '\\underline{\\underline{V_2 = {\\pu{1 m^3}}}}',
-      '\\underline{\\underline{T_1 = {\\pu{1 \\degree K}}}}',
-      '\\underline{\\underline{T_2 = {\\pu{1 \\degree K}}}}'
-    ];
+  '\\cfrac {p_1 \\cdot V_1} {T_1} = \\cfrac {p_2 \\cdot V_2} {T_2}',
+  'p_1 \\cdot V_1 = \\cfrac {p_2 \\cdot V_2 \\cdot T_1} {T_2}',
+  'p_1 = \\cfrac {p_2 \\cdot V_2 \\cdot T_1} {T_2 \\cdot V_1}',
+  'V_1 = \\cfrac {p_2 \\cdot V_2 \\cdot T_1} {T_2 \\cdot p_1}',
+  '\\cfrac {p_1 \\cdot V_1 \\cdot T_2} {T_1} = p_2 \\cdot V_2',
+  '\\cfrac {p_1 \\cdot V_1 \\cdot T_2} {T_1 \\cdot V_2} = p_2',
+  '\\cfrac {p_1 \\cdot V_1 \\cdot T_2} {T_1 \\cdot p_2} = V_2',
+  '\\cfrac {T_1} {p_1 \\cdot V_1} = \\cfrac {T_2} {p_2 \\cdot V_2}',
+  '\\cfrac {T_1} {p_1} = \\cfrac {T_2 \\cdot V_1} {p_2 \\cdot V_2}',
+  '\\cfrac {T_1 \\cdot V_2} {p_1 \\cdot V_1} = \\cfrac {T_2} {p_2}',
+  'T_1 = \\cfrac {T_2 \\cdot V_1 \\cdot p_1} {p_2 \\cdot V_2}',
+  '\\cfrac {T_1 \\cdot V_2 \\cdot p_2} {p_1 \\cdot V_1} = T_2',
+  'p_1 = \\cfrac {{\\pu{' + values[2] + ' Pa}} \\cdot {\\pu{' + values[3] + ' m^3}} \\cdot {\\pu{' + values[4] + ' \\degree K}}} {{\\pu{' + values[5] + ' \\degree K}} \\cdot {\\pu{' + values[1] + ' m^3}}}',
+  'V_1 = \\cfrac {{\\pu{' + values[2] + ' Pa}} \\cdot {\\pu{' + values[3] + ' m^3}} \\cdot {\\pu{' + values[4] + ' \\degree K}}} {{\\pu{' + values[5] + ' \\degree K}} \\cdot {\\pu{' + values[0] + ' Pa}}}',
+  '\\cfrac {{\\pu{' + values[0] + ' Pa}} \\cdot {\\pu{' + values[1] + ' m^3}} \\cdot {\\pu{' + values[5] + ' \\degree K}}} {{\\pu{' + values[4] + ' \\degree K}} \\cdot {\\pu{' + values[3] + ' m^3}}} = p_2',
+  '\\cfrac {{\\pu{' + values[0] + ' Pa}} \\cdot {\\pu{' + values[1] + ' m^3}} \\cdot {\\pu{' + values[5] + ' \\degree K}}} {{\\pu{' + values[4] + ' \\degree K}} \\cdot {\\pu{' + values[2] + ' Pa}}} = V_2',
+  'T_1 = \\cfrac {{\\pu{' + values[5] + ' \\degree K}} \\cdot {\\pu{' + values[1] + ' m^3}} \\cdot {\\pu{' + values[0] + ' Pa}}} {{\\pu{' + values[2] + ' Pa}} \\cdot {\\pu{' + values[3] + ' m^3}}}',
+  '\\cfrac {{\\pu{' + values[4] + ' \\degree K}} \\cdot {\\pu{' + values[3] + ' m^3}} \\cdot {\\pu{' + values[2] + ' Pa}}} {{\\pu{' + values[0] + ' Pa}} \\cdot {\\pu{' + values[1] + ' m^3}}} = T_2',
+  '\\underline{\\underline{p_1 = {\\pu{' + ((values[2] * values[3] * values[4])/(values[5] * values[1])).toFixed(2).toString() + ' Pa}}}}',
+  '\\underline{\\underline{V_1 = {\\pu{1 m^3}}}}',
+  '\\underline{\\underline{p_2 = {\\pu{1 Pa}}}}',
+  '\\underline{\\underline{V_2 = {\\pu{1 m^3}}}}',
+  '\\underline{\\underline{T_1 = {\\pu{1 \\degree K}}}}',
+  '\\underline{\\underline{T_2 = {\\pu{1 \\degree K}}}}'
+];
 		
 // Parse data
 document.getElementById("myCategory").innerHTML = data[category].cim;
@@ -129,6 +125,5 @@ for (i = 0; i < data[category].rendezes[calculate].length; i++) {
 }
 
 </script>
-
-  </body>
+</body>
 </html>

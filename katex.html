@@ -42,23 +42,12 @@ var data = {
       T2: [0, 7, 9, 11, 17, 23]  
     }
   },
-  valamimas: {
-    cim: "Ferde hajítás",
-    kepletek: [
-      '\\cfrac{p_1 \\cdot V_1}{T_1} = \\cfrac{p_2 \\cdot V_2}{T_2}',
-      'p_1 \\cdot V_1 = \\cfrac{p_2 \\cdot V_2 \\cdot T_1}{T_2}',
-      'p_1 = \\cfrac{p_2 \\cdot V_2 \\cdot T_1}{T_2 \\cdot V_1}',
-      '\\underline{\\underline{p_1 = \\pu{123 m//s^2}}}',
-      'V_1 = \\cfrac{p_2 \\cdot V_2 \\cdot T_1}{T_2 \\cdot p_1}',
-      '\\underline{\\underline{V_1 = \\pu{123 m//s^2}}}'
-    ],
+  egyenvalt: {
+    cim: "Egyenletesen változó mozgás",
     rendezes : {
-      x1: [0, 1, 2, 3],
-      x2: [0, 1, 4, 5],
-      x3: [0, 1, 4],
-      x4: [0, 1, 4],
-      x5: [0, 1, 4],
-      x6: [0, 1, 4]
+      s: [0, 5, 8],
+      a: [0, 1, 2, 6, 9],
+      t: [0, 1, 3, 4, 7, 10]
     }
   }
 };
@@ -106,7 +95,20 @@ data.gaztorveny.kepletek = [
   '\\underline{\\underline{T_1 = {\\pu{' + ((values[5] * values[1] * values[0]) / (values[2] * values[3])).toFixed(2).toString() + ' \\degree K}}}}',
   '\\underline{\\underline{T_2 = {\\pu{' + ((values[4] * values[3] * values[2]) / (values[0] * values[1])).toFixed(2).toString() + ' \\degree K}}}}'
 ];
-		
+data.egyenvalt.kepletek = [
+  's = {\\cfrac {a} {2}} \\cdot {t^2}',
+  '2 \\cdot s = {a} \\cdot {t^2}',
+  '\\cfrac {2 \\cdot s} {t^2} = a',
+  '\\cfrac {2 \\cdot s} {a} = {t^2}',
+  '\\sqrt{\\cfrac {2 \\cdot s} {a}} = {t}',
+  's = {\\cfrac {\\pu{1 m//{s^2}}} {2}} \\cdot {{\\pu{1 s}}^2}',
+  '\\cfrac {2 \\cdot {\\pu{1 m}}} {{\\pu{1 s}}^2} = a',
+  '\\sqrt{\\cfrac {2 \\cdot {\\pu{1 m}}} {\\pu{1 m//{s^2}}}} = {t}',
+  '\\underline{\\underline{s = \\pu{1 m}}}',
+  '\\underline{\\underline{a = \\pu{1 m//s^2}}}',
+  '\\underline{\\underline{t = \\pu{1 s}}}'
+];
+	
 // Parse data
 document.getElementById("myCategory").innerHTML = data[category].cim;
 var i;

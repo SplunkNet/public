@@ -104,7 +104,7 @@ data.egyenvalt.kepletek = [
   's = {\\cfrac {\\pu{' + values[1] + ' m//{s^2}}} {2}} \\cdot {({\\pu{' + values[2] + ' s}})^2}',
   '\\cfrac {2 \\cdot {\\pu{' + values[0] + ' m}}} {{\\pu{' + values[2] + ' s}}^2} = a',
   '\\sqrt{\\cfrac {2 \\cdot {\\pu{' + values[0] + ' m}}} {\\pu{' + values[1] + ' m//{s^2}}}} = {t}',
-  '\\underline{\\underline{s = \\pu{' + ((values[1] * values[2]) / 2).toFixed(2).toString() + ' m}}}',
+  '\\underline{\\underline{s = \\pu{' + ((values[1] * (Math.pow(values[2],2))) / 2).toFixed(2).toString() + ' m}}}',
   '\\underline{\\underline{a = \\pu{1 m//s^2}}}',
   '\\underline{\\underline{t = \\pu{1 s}}}'
 ];

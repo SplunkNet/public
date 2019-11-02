@@ -39,7 +39,7 @@ incidentGR.setValue('priority', 2);
 incidentGR.setValue('description', 'test');
 incidentGR.insert();
 
-// Get the sys_id of the newly created record:
+// Get the sys_id of the newly created record
 var newSysId = incidentGR.insert();
 ```
 

@@ -79,10 +79,8 @@ incidentGR.addQuery('sys_class_name', 'INSTANCEOF', 'incident');
 
 ### Other parameters
 ```javascript
-// Order by
+// Order by field (ascending is default)
 incidentGR.orderBy('category');
-
-// Order by descending
 incidentGR.orderByDesc('sys_created_on');
 
 // Limit the number or records returned
@@ -91,16 +89,12 @@ incidentGR.setLimit(5);
 //
 incidentGR.chooseWindow(10, 20);
 
-// Find all records where the Short Description is empty
+// Find all records where the field is empty / not empty
 incidentGR.addNullQuery('short_description');
-
-// Find all records where the Short Description is NOT empty
 incidentGR.addNotNullQuery('short_description');
 
-// Find all active incidents, equal to: incidentGR.addQuery('active', true);
+// Find all active/incative records, same as .addQuery('active', true/false);
 incidentGR.addActiveQuery();
-
-// Find all inactive incidents, equal to: incidentGR.addQuery('active', false);
 incidentGR.addInactiveQuery();
 ```
 

@@ -56,39 +56,22 @@ while (incidentGR.next()) {
 
 ### Query operators
 ```javascript
-//Equals (this is the same as not including the 3rd parameter)
-incidentGR.addQuery('priority', '=', 2);
+incidentGR.addQuery('priority', '=', 2);  // Equals (same as not including the 3rd parameter)
+incidentGR.addQuery('priority', '>', 2);  // Greater than
+incidentGR.addQuery('priority', '<', 2);  // Less than
+incidentGR.addQuery('priority', '>=', 2); // Greater than or equals
+incidentGR.addQuery('priority', '<=', 2); // Less than or equals
+incidentGR.addQuery('priority', '!=', 2); // Not equals
  
-//Greater than
-incidentGR.addQuery('priority', '>', 2);
- 
-//Less than
-incidentGR.addQuery('priority', '<', 2);
- 
-//Greater than or equals
-incidentGR.addQuery('priority', '>=', 2);
- 
-//Less than or equals
-incidentGR.addQuery('priority', '<=', 2);
- 
-//Not equals
-incidentGR.addQuery('priority', '!=', 2);
- 
-//Field must start with value
 incidentGR.addQuery('short_description', 'STARTSWITH', 'Printer');
- 
-//Field must end with value
 incidentGR.addQuery('short_description', 'ENDSWITH', 'Printer');
- 
-//Field must contain value somewhere
 incidentGR.addQuery('short_description', 'CONTAINS', 'Printer');
- 
-//Field must not contain value anywhere
 incidentGR.addQuery('short_description', 'DOES NOT CONTAIN', 'Printer');
  
-//Field must be found somewhere in the value
+// IN & NOT IN for lists
 incidentGR.addQuery('sys_id', 'IN', '8d641046c0a80164000bc7c0d3ed46a0,a9a16740c61122760004fe9095b7ddca');
- 
+incidentGR.addQuery('sys_id', 'NOT IN', '8d641046c0a80164000bc7c0d3ed46a0,a9a16740c61122760004fe9095b7ddca');
+
 //Return only records that are instances of an extended table (like incident is of task in this example)
 incidentGR.addQuery('sys_class_name', 'INSTANCEOF', 'incident');
 ```

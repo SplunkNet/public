@@ -1,3 +1,5 @@
+<h2 align="center">GlideRecord</h2>
+
 ### GlideRecord query
 ```javascript
 var incidentGR = new GlideRecord('incident');

@@ -1,4 +1,4 @@
-## GlideRecord query
+### GlideRecord query
 ```javascript
 var incidentGR = new GlideRecord('incident');
 incidentGR.addQuery('active', true);
@@ -9,7 +9,7 @@ while (incidentGR.next()) {
    gs.info(incidentGR.getValue('number'));
 }
 ```
-## .get()
+### .get()
 ```javascript
 // get by sys_id
 var incidentGR = new GlideRecord('incident');

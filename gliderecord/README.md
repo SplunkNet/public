@@ -145,10 +145,10 @@ while (incidentGR.next()) {
    //Do something with the records returned
 }
 
-// Alternative: break down the encoded query
-// var strQuery = 'active=true';
-// strQuery = strQuery + '^category=software';
-// strQuery = strQuery + '^ORcategory=hardware';
+// Alternatively, you can break down the encoded query
+var strQuery = 'active=true';
+strQuery = strQuery + '^category=software';
+strQuery = strQuery + '^ORcategory=hardware';
 
 // CANNOT be used in Client scripts and UI policies! Use ‘addQuery(YOURENCODEDQUERYHERE)’ instead.
 ```

@@ -112,6 +112,12 @@ incidentGR.addNullQuery('short_description');
 
 // Find all records where the Short Description is NOT empty
 incidentGR.addNotNullQuery('short_description');
+
+// Find all active incidents, equal to: incidentGR.addQuery('active', true);
+incidentGR.addActiveQuery();
+
+// Find all inactive incidents, equal to: incidentGR.addQuery('active', false);
+incidentGR.addInactiveQuery();
 ```
 
 ### OR query

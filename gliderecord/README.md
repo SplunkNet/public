@@ -146,3 +146,35 @@ if (incidentGR.get('number', 'INC0000059')) {
    gs.info('Not found!');
 }
 ```
+
+### Get all field details for a GlideRecord  
+```javascript
+function getAllFields (glideRec) {
+   var prop;
+   var props = [];
+   for (prop in glideRec) {
+      props.push(prop);
+   }
+   props.sort();
+
+   var fieldsObject = {};
+   for(var i = 0; i < props.length; i++){
+      if (glideRec.getValue(props[i]) && glideRec.getValue(props[i]) !== glideRec.getDisplayValue(props[i])) {
+         fieldsObject[props[i]] = {value: glideRec.getValue(props[i]), display_value: glideRec.getDisplayValue(props[i])}
+      } else {
+         fieldsObject[props[i]] = glideRec.getValue(props[i]);
+      }
+   }
+
+   var fieldsData = JSON.stringify(fieldsObject, null, 3);
+   gs.info('\n' + fieldsData);
+}
+
+var incidentGR = new GlideRecord('incident');
+if (incidentGR.get('number', 'INC0000059')) {
+   getAllFields(incidentGR);  
+}
+```
+
+
+

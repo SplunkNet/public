@@ -83,19 +83,19 @@ incidentGR.addQuery('sys_class_name', 'INSTANCEOF', 'incident');
 incidentGR.orderBy('category');
 incidentGR.orderByDesc('sys_created_on');
 
-// Limit the number or records returned
-incidentGR.setLimit(5);
-
-//
-incidentGR.chooseWindow(10, 20);
+// Find all active/incative records
+incidentGR.addActiveQuery();
+incidentGR.addInactiveQuery();
 
 // Find all records where the field is empty / not empty
 incidentGR.addNullQuery('short_description');
 incidentGR.addNotNullQuery('short_description');
 
-// Find all active/incative records, same as .addQuery('active', true/false);
-incidentGR.addActiveQuery();
-incidentGR.addInactiveQuery();
+// Limit the number or records returned
+incidentGR.setLimit(5);
+
+// Explain
+incidentGR.chooseWindow(10, 20);
 ```
 
 ### OR query

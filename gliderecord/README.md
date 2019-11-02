@@ -162,7 +162,7 @@ function getAllFields (glideRec) {
       var fieldValue = glideRec.getValue(props[i]);
       var fieldDisplayValue = glideRec.getDisplayValue(props[i]);
       if (fieldValue && fieldValue !== fieldDisplayValue) {
-         fieldsObject[props[i]] = {value: fieldValue, display_value: fieldDisplayValue}
+         fieldsObject[props[i]] = {value: fieldValue, display_value: fieldDisplayValue};
       } else {
          fieldsObject[props[i]] = fieldValue;
       }

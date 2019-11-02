@@ -11,7 +11,7 @@ while (incidentGR.next()) {
    gs.info(incidentGR.getValue('number'));
 }
 ```
-### .get() by sys_id
+### .get()
 ```javascript
 // get by sys_id
 var incidentGR = new GlideRecord('incident');

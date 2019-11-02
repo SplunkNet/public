@@ -79,7 +79,7 @@ incidentGR.addQuery('sys_class_name', 'INSTANCEOF', 'incident');
 
 ### Other parameters
 ```javascript
-// Order by field (ascending is default)
+// Order by field ascending/descending
 incidentGR.orderBy('number');
 incidentGR.orderByDesc('sys_created_on');
 

@@ -36,7 +36,7 @@ var incidentGR = new GlideRecord('incident');
 incidentGR.initialize();
 incidentGR.setValue('active', true);
 incidentGR.setValue('priority', 2);
-incidentGR.setValue('type', 'test');
+incidentGR.setValue('description', 'test');
 incidentGR.insert();
 
 // Get the sys_id of the newly created record:

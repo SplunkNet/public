@@ -56,13 +56,14 @@ while (incidentGR.next()) {
 
 ### Query operators
 ```javascript
-incidentGR.addQuery('priority', '=', 2);  // Equals (same as not including the 3rd parameter)
-incidentGR.addQuery('priority', '>', 2);  // Greater than
-incidentGR.addQuery('priority', '<', 2);  // Less than
-incidentGR.addQuery('priority', '>=', 2); // Greater than or equals
-incidentGR.addQuery('priority', '<=', 2); // Less than or equals
-incidentGR.addQuery('priority', '!=', 2); // Not equals
- 
+// Equals (same as not including the 3rd parameter), not equals, greater than, less than 
+incidentGR.addQuery('priority', '=', 2);
+incidentGR.addQuery('priority', '!=', 2);
+incidentGR.addQuery('priority', '>', 2);
+incidentGR.addQuery('priority', '<', 2);
+incidentGR.addQuery('priority', '>=', 2);
+incidentGR.addQuery('priority', '<=', 2);
+
 incidentGR.addQuery('short_description', 'STARTSWITH', 'Printer');
 incidentGR.addQuery('short_description', 'ENDSWITH', 'Printer');
 incidentGR.addQuery('short_description', 'CONTAINS', 'Printer');

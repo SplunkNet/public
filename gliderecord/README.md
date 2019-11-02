@@ -159,10 +159,12 @@ function getAllFields (glideRec) {
 
    var fieldsObject = {};
    for(var i = 0; i < props.length; i++){
-      if (glideRec.getValue(props[i]) && glideRec.getValue(props[i]) !== glideRec.getDisplayValue(props[i])) {
-         fieldsObject[props[i]] = {value: glideRec.getValue(props[i]), display_value: glideRec.getDisplayValue(props[i])}
+      var fieldValue = glideRec.getValue(props[i]);
+      var fieldDisplayValue = glideRec.getDisplayValue(props[i]);
+      if (fieldValue && fieldValue !== fieldDisplayValue) {
+         fieldsObject[props[i]] = {value: fieldValue, display_value: fieldDisplayValue}
       } else {
-         fieldsObject[props[i]] = glideRec.getValue(props[i]);
+         fieldsObject[props[i]] = fieldValue;
       }
    }
 
@@ -175,6 +177,3 @@ if (incidentGR.get('number', 'INC0000059')) {
    getAllFields(incidentGR);  
 }
 ```
-
-
-

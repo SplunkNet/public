@@ -158,7 +158,7 @@ function getAllFields (glideRec) {
    props.sort();
 
    var fieldsObject = {};
-   for(var i = 0; i < props.length; i++){
+   for (var i = 0; i < props.length; i++) {
       var fieldValue = glideRec.getValue(props[i]);
       var fieldDisplayValue = glideRec.getDisplayValue(props[i]);
       if (fieldValue && fieldValue !== fieldDisplayValue) {

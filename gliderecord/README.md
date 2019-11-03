@@ -149,7 +149,7 @@ if (incidentGR.get('number', 'INC0000059')) {
 
 ### Get all field details for a GlideRecord  
 ```javascript
-function getAllFields (glideRec) {
+function getAllFields(glideRec) {
    var prop;
    var props = [];
    for (prop in glideRec) {
